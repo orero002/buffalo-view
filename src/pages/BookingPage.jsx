@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import heroBooking from '../Assets/nick-karvounis-Ciqxn7FE4vE-unsplash.jpg'
+import { supabase } from '../lib/supabase'
 
 function BookingPage() {
   const [selectedTime, setSelectedTime] = useState('19:00')
@@ -9,10 +10,34 @@ function BookingPage() {
     time: '19:00',
   })
   const [submitted, setSubmitted] = useState(false)
+  const [isSaving, setIsSaving] = useState(false)
+  const [saveError, setSaveError] = useState('')
 
-  function handleSubmit(event) {
+  async function handleSubmit(event) {
     event.preventDefault()
-    setSubmitted(true)
+    setIsSaving(true)
+    setSaveError('')
+
+    try {
+      const { error } = await supabase.from('reservations').insert([
+        {
+          date: reservation.date,
+          guests: Number(reservation.guests),
+          time: reservation.time,
+        },
+      ])
+
+      if (error) {
+        throw error
+      }
+
+      setSubmitted(true)
+    } catch (error) {
+      console.error('Reservation save failed:', error)
+      setSaveError('We could not save your reservation yet. Please create the table in Supabase first.')
+    } finally {
+      setIsSaving(false)
+    }
   }
 
   return (
@@ -112,11 +137,13 @@ function BookingPage() {
                 <div className="border-t border-[#554336]/40 pt-8">
                   <button
                     type="submit"
-                    className="flex w-full items-center justify-center gap-2 rounded-lg bg-[#ffb77d] px-6 py-4 text-sm font-semibold uppercase tracking-[0.2em] text-[#4d2600] transition-all hover:bg-[#ffca95]"
+                    disabled={isSaving}
+                    className="flex w-full items-center justify-center gap-2 rounded-lg bg-[#ffb77d] px-6 py-4 text-sm font-semibold uppercase tracking-[0.2em] text-[#4d2600] transition-all hover:bg-[#ffca95] disabled:cursor-not-allowed disabled:opacity-70"
                   >
-                    Confirm Availability
+                    {isSaving ? 'Saving Reservation…' : 'Confirm Availability'}
                     <span className="material-symbols-outlined">arrow_forward</span>
                   </button>
+                  {saveError ? <p className="mt-3 text-sm text-[#ffb77d]">{saveError}</p> : null}
                 </div>
               </form>
             </div>

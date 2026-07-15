@@ -3,34 +3,49 @@ import heroDrinks from '../Assets/istockphoto-1404412754-1024x1024.jpg'
 const signatureCocktails = [
   {
     name: 'The Buffalo Trace Old Fashioned',
-    price: '$18',
+    price: '700ksh',
     description: 'Small batch bourbon, cedar-smoked maple syrup, black walnut bitters, and a hand-carved ice sphere.',
     tags: ['Smoky', 'Bold'],
   },
   {
     name: 'Midnight Prairie',
-    price: '$16',
+    price: '500ksh',
     description: 'Rye whiskey, activated charcoal, muddled blackberries, lemon juice, and a sprig of fresh sage.',
     tags: ['Tart', 'Earthy'],
   },
   {
     name: 'Desert Rose Gimlet',
-    price: '$15',
+    price: '500ksh',
     description: 'Botanical gin, hibiscus-infused agave, fresh lime, and a saline drop. Served up with a dried rose petal.',
     tags: ['Floral', 'Refining'],
   },
 ]
 
 const beers = [
-  ['Badlands Double IPA', '$10', 'Cloudy, hop-forward with notes of pine and grapefruit. 8.2% ABV'],
-  ['Iron Range Stout', '$9', 'Nitro pour. Roasted cocoa nibs, dark espresso, and a creamy head. 6.5% ABV'],
-  ['Prairie Wheat', '$8', 'Crisp and bright with citrus peel and a soft honeyed finish. 5.0% ABV'],
+  ['Badlands Double IPA', '1000ksh', 'Cloudy, hop-forward with notes of pine and grapefruit. 8.2% ABV'],
+  ['Iron Range Stout', '900ksh', 'Nitro pour. Roasted cocoa nibs, dark espresso, and a creamy head. 6.5% ABV'],
+  ['Prairie Wheat', '800ksh', 'Crisp and bright with citrus peel and a soft honeyed finish. 5.0% ABV'],
+  ['Frontier Pilsner', '700ksh', 'Light-bodied, clean, and refreshing with a subtle floral hop aroma. 4.8% ABV'],
+  ['Corona', '850ksh', 'Balanced malt sweetness with caramel notes and a smooth finish. 5.5% ABV'],
+  ['savvana', '750ksh', 'Light-bodied, crisp, and refreshing with a subtle hop aroma. 4.2% ABV'],
+  ['Tusker', '800ksh', 'signature 4.2% ABV and iconic elephant logo, the brand was created in 1922 to honor George Hurst, a brewery co-founder killed by an elephant'],
 ]
 
 const spirits = [
-  ['High Plains Single Malt', '$14', 'Rich barley sweetness with toasted oak and orchard fruit.'],
-  ['Cedar Reserve Rye', '$13', 'Spice-led and polished, finished with a whisper of smoke.'],
-  ['Northwind Amaro', '$12', 'Herbal bitterness balanced by dark cherry and orange peel.'],
+  ['High Plains Single Malt', '3500ksh', 'Rich barley sweetness with toasted oak and orchard fruit.'],
+  ['Cedar Reserve Rye', '2000ksh', 'Spice-led and polished, finished with a whisper of smoke.'],
+  ['Northwind Amaro', '2700ksh', 'Herbal bitterness balanced by dark cherry and orange peel.'],
+  ['County', '950ksh', 'vanilla, oak, and caramel notes with a smooth finish.'],
+  ['Dallas', '700ksh', 'Herbal bitterness balanced by dark cherry and orange peel.'],
+  ['Kenya Kane', '900ksh', 'Agencies Limited (KWAL) since 1976. Bottled at 40% ABV'],
+  ['Hunters Choice', '2700ksh', 'it contains 40% ABV and features subtle tasting notes of oak, vanilla, and apple'],
+  ['Jagermeister', '4000ksh', '1934 by Wilhelm and Curt Mast, it has an alcohol by volume of 35%. The recipe of 56 herbs and spices'],
+  ['Smirnoff Vodka', '3500ksh', 'renowned for its triple-distilled, 10-times filtered profile that delivers a clean, smooth finish'],
+  ['Konyagi', '3000ksh', ' It offers a smooth, citrus, and slightly peppery flavor profile'],
+  ['Amarula', '3000ksh', 'Featuring a 17% ABV, it is celebrated for its rich, sweet, and velvety flavor profile with notes of caramel, vanilla, and subtle tropical fruit.'],
+  ['Chrome', '800ksh', ' It offers a smooth, citrus, and slightly peppery flavor profile'],
+  ['Juniper', '10000ksh', ' Bottled at 40% ABV, it features a crisp, juniper-forward profile with citrus and soft spice notes'],
+  ['Bacardi', '7000ksh', ' It offers a smooth, citrus, and slightly peppery flavor profile'],
 ]
 
 function DrinksPage() {
@@ -95,7 +110,7 @@ function DrinksPage() {
                     </span>
                     <h4 className="text-2xl font-semibold text-[#f3efe7]">The Buffalo Trace Old Fashioned</h4>
                   </div>
-                  <span className="text-2xl font-semibold text-[#ffb77d]">$18</span>
+                  <span className="text-2xl font-semibold text-[#ffb77d]">700ksh</span>
                 </div>
                 <p className="max-w-lg text-[#dbc2b0]">
                   Our house hallmark. Small batch bourbon, cedar-smoked maple syrup, black walnut bitters, and a hand-carved ice sphere. Finished with a charred orange zest.
